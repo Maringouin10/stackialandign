@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conditions d'utilisation — Stackia</title>
+<meta name="description" content="Conditions d'utilisation de Stackia : règles d'usage, responsabilités, comptes et résiliation.">
+<meta name="theme-color" content="#7c3aed">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{neon:{50:'#f3e8ff',100:'#e9d5ff',200:'#d8b4fe',300:'#c084fc',400:'#a855f7',500:'#9333ea',600:'#7c3aed',700:'#6d28d9',800:'#5b21b6',900:'#4c1d95'}}}}}</script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',system-ui,sans-serif;background:#000;color:#e2e8f0;overflow-x:hidden}
+  ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:#0a0a0a}::-webkit-scrollbar-thumb{background:#7c3aed;border-radius:999px}
+  .hero-bg{position:relative;overflow:hidden}
+  .hero-bg::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;
+    background:radial-gradient(ellipse at 30% 20%,rgba(124,58,237,.15) 0%,transparent 50%),radial-gradient(ellipse at 70% 80%,rgba(168,85,247,.10) 0%,transparent 50%);
+    animation:bgPulse 8s ease-in-out infinite alternate;z-index:0}
+  @keyframes bgPulse{0%{transform:translate(0,0) scale(1)}100%{transform:translate(-3%,3%) scale(1.05)}}
+  .glow-btn{transition:all .3s ease;box-shadow:0 0 20px rgba(124,58,237,.3)}
+  .glow-btn:hover{box-shadow:0 0 30px rgba(168,85,247,.6);transform:translateY(-2px)}
+  .gradient-text{background:linear-gradient(135deg,#c084fc,#7c3aed);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .gradient-text-bright{background:linear-gradient(135deg,#e9d5ff,#a855f7);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .grid-overlay{position:absolute;inset:0;z-index:0;background-image:linear-gradient(rgba(124,58,237,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(124,58,237,.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+  .nav-blur{backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+  .prose h2{color:#fff;font-size:1.5rem;font-weight:700;margin-top:2.5rem;margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}
+  .prose h3{color:#e9d5ff;font-size:1.125rem;font-weight:600;margin-top:1.5rem;margin-bottom:.75rem}
+  .prose p{color:#9ca3af;line-height:1.75;margin-bottom:1rem}
+  .prose ul{list-style:none;padding:0;margin-bottom:1rem}
+  .prose ul li{color:#9ca3af;line-height:1.75;padding-left:1.5rem;position:relative;margin-bottom:.5rem}
+  .prose ul li::before{content:'';position:absolute;left:0;top:.75rem;width:6px;height:6px;border-radius:50%;background:#a855f7}
+  .prose strong{color:#fff}
+  .prose a{color:#c084fc;text-decoration:underline}
+  .prose a:hover{color:#e9d5ff}
+  .callout{border:1px solid rgba(234,179,8,.3);background:rgba(234,179,8,.05);border-radius:1rem;padding:1.25rem;margin:1.5rem 0;display:flex;gap:.75rem;align-items:flex-start}
+</style>
+</head>
+<body>
+
+<nav id="main-nav" class="fixed top-0 inset-x-0 z-50 nav-blur bg-black/70 border-b border-white/5 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 sm:h-20">
+      <a href="index.html" class="flex items-center gap-2 group">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-neon-500 to-neon-700 flex items-center justify-center shadow-lg shadow-neon-500/20"><i data-lucide="layers" class="w-5 h-5 text-white"></i></div>
+        <span class="text-xl font-bold text-white">Stack<span class="gradient-text">ia</span></span>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="features.html" class="text-sm text-gray-400 hover:text-white transition-colors">Fonctionnalités</a>
+        <a href="how-it-works.html" class="text-sm text-gray-400 hover:text-white transition-colors">Comment ça marche</a>
+        <a href="pricing.html" class="text-sm text-gray-400 hover:text-white transition-colors">Tarifs</a>
+        <a href="faq.html" class="text-sm text-gray-400 hover:text-white transition-colors">FAQ</a>
+        <a href="news.html" class="text-sm text-gray-400 hover:text-white transition-colors">Actualités</a>
+        <a href="about.html" class="text-sm text-gray-400 hover:text-white transition-colors">À propos</a>
+        <a href="https://app.stackia.trade/" target="_blank" rel="noopener" class="glow-btn inline-flex items-center gap-2 px-5 py-2.5 bg-neon-600 hover:bg-neon-500 text-white text-sm font-semibold rounded-full">Lancer la simulation <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+      </div>
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-400" aria-label="Menu"><i data-lucide="menu" class="w-6 h-6"></i></button>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden pb-4 border-t border-white/5 mt-2 pt-4 space-y-3">
+      <a href="features.html" class="block text-sm text-gray-400 py-2">Fonctionnalités</a>
+      <a href="how-it-works.html" class="block text-sm text-gray-400 py-2">Comment ça marche</a>
+      <a href="pricing.html" class="block text-sm text-gray-400 py-2">Tarifs</a>
+      <a href="faq.html" class="block text-sm text-gray-400 py-2">FAQ</a>
+      <a href="news.html" class="block text-sm text-gray-400 py-2">Actualités</a>
+      <a href="about.html" class="block text-sm text-gray-400 py-2">À propos</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero-bg relative pt-32 sm:pt-40 pb-12">
+  <div class="grid-overlay"></div>
+  <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 text-center">
+    <span class="inline-block px-4 py-1 bg-neon-900/30 border border-neon-800/30 rounded-full text-xs text-neon-300 uppercase tracking-widest mb-4">Légal</span>
+    <h1 class="text-4xl sm:text-5xl font-black leading-tight mb-4">Conditions <span class="gradient-text-bright">d'utilisation</span></h1>
+    <p class="text-sm text-gray-500">Dernière mise à jour : 18 avril 2026</p>
+  </div>
+</section>
+
+<section class="relative py-12 bg-black">
+  <div class="grid-overlay"></div>
+  <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 prose">
+
+    <p>En créant un compte ou en utilisant Stackia, vous acceptez les conditions ci-dessous. Lisez-les attentivement : elles définissent vos droits et obligations.</p>
+
+    <div class="callout">
+      <i data-lucide="alert-triangle" class="w-5 h-5 text-yellow-400 flex-shrink-0 mt-0.5"></i>
+      <div>
+        <strong class="text-yellow-200">Stackia est un simulateur éducatif.</strong>
+        <p class="!mb-0 !mt-1 text-sm">Aucune opération financière réelle n'est effectuée. Aucun capital ne peut être investi, retiré ou perdu. Stackia n'est pas un courtier agréé et ne fournit aucun conseil en investissement.</p>
+      </div>
+    </div>
+
+    <h2><i data-lucide="file-text" class="w-6 h-6 text-neon-400"></i>1. Objet du service</h2>
+    <p>Stackia est une plateforme web gratuite permettant de simuler des investissements sur actions, cryptomonnaies, matières premières, indices et paris de prédiction, avec de l'argent <strong>virtuel uniquement</strong>. Le service inclut également une messagerie sociale, un assistant IA et un système de parrainage.</p>
+
+    <h2><i data-lucide="user" class="w-6 h-6 text-neon-400"></i>2. Compte utilisateur</h2>
+    <h3>2.1 Création</h3>
+    <ul>
+      <li>L'inscription est gratuite et nécessite une adresse email valide ou une authentification Google OAuth.</li>
+      <li>Vous devez fournir des informations exactes et les maintenir à jour.</li>
+      <li>L'accès est réservé aux personnes de <strong>13 ans et plus</strong>. Les mineurs doivent avoir l'autorisation de leurs représentants légaux.</li>
+      <li>Un seul compte par personne. La création de comptes multiples pour fausser le classement ou le parrainage entraîne la suppression.</li>
+    </ul>
+    <h3>2.2 Sécurité</h3>
+    <p>Vous êtes responsable de la confidentialité de votre mot de passe et de toutes les activités sous votre compte. Informez-nous immédiatement en cas d'accès non autorisé.</p>
+
+    <h2><i data-lucide="check-circle" class="w-6 h-6 text-neon-400"></i>3. Usage autorisé</h2>
+    <p>Vous acceptez d'utiliser Stackia uniquement à des fins personnelles, éducatives et non commerciales. Sont <strong>interdits</strong> :</p>
+    <ul>
+      <li>L'usage de bots, de scripts automatisés ou de scrapers non autorisés.</li>
+      <li>La contournement des limites de requêtes (IA, parrainage).</li>
+      <li>Le harcèlement, les contenus illégaux, haineux, pornographiques ou diffamatoires dans la messagerie.</li>
+      <li>La revente, la sous-licence ou la diffusion du service à des tiers.</li>
+      <li>L'exploitation de failles de sécurité — signalez-les plutôt à <a href="mailto:security@stackia.trade">security@stackia.trade</a>.</li>
+      <li>L'usurpation d'identité ou la création de comptes au nom de tiers.</li>
+    </ul>
+
+    <h2><i data-lucide="gem" class="w-6 h-6 text-neon-400"></i>4. Premium et parrainage</h2>
+    <ul>
+      <li>Le statut <strong>Premium</strong> s'obtient via (a) un code ami (14 jours), (b) un code de classe EDU (Premium à vie) ou (c) un abonnement payant à venir.</li>
+      <li>Les <strong>14 jours de parrainage</strong> sont crédités une fois le filleul inscrit et vérifié. Le système anti-fraude par device hash peut annuler le bonus en cas d'abus détecté.</li>
+      <li>Le <strong>Premium à vie</strong> via code EDU est réservé aux élèves réellement inscrits dans une classe enseignante. Les faux comptes peuvent être supprimés sans préavis.</li>
+    </ul>
+
+    <h2><i data-lucide="scale" class="w-6 h-6 text-neon-400"></i>5. Propriété intellectuelle</h2>
+    <p>Le code source, le design, la marque Stackia et les éléments graphiques sont la propriété de Stackia. Vous conservez la propriété des contenus que vous publiez (messages, photo de profil) et nous accordez uniquement la licence nécessaire à leur affichage dans l'application.</p>
+
+    <h2><i data-lucide="activity" class="w-6 h-6 text-neon-400"></i>6. Données de marché</h2>
+    <p>Les prix proviennent de <strong>Yahoo Finance</strong>, avec une latence pouvant atteindre une minute. Ce ne sont pas des données temps réel à haute fréquence. Aucune garantie n'est donnée sur leur exactitude ou leur exhaustivité. Les prix simulés ne peuvent pas être utilisés comme référence pour des décisions financières réelles.</p>
+
+    <h2><i data-lucide="alert-octagon" class="w-6 h-6 text-neon-400"></i>7. Absence de conseil financier</h2>
+    <p><strong>Stackia ne fournit aucun conseil en investissement.</strong> Les analyses, simulations et réponses de l'assistant IA sont fournies à titre purement éducatif. Elles ne doivent pas être interprétées comme une recommandation d'achat, de vente ou de détention d'un actif financier réel. Pour toute décision réelle, consultez un professionnel agréé.</p>
+
+    <h2><i data-lucide="shield-off" class="w-6 h-6 text-neon-400"></i>8. Limitation de responsabilité</h2>
+    <p>Le service est fourni « en l'état », sans garantie. Dans la limite autorisée par la loi :</p>
+    <ul>
+      <li>Nous ne garantissons pas un fonctionnement ininterrompu ou exempt d'erreur.</li>
+      <li>Nous ne sommes pas responsables des pertes (financières, temps, opportunité) résultant de décisions d'investissement réelles prises par un utilisateur sur la base de ses simulations Stackia.</li>
+      <li>Nous ne sommes pas responsables des contenus échangés par les utilisateurs dans la messagerie.</li>
+    </ul>
+
+    <h2><i data-lucide="x-circle" class="w-6 h-6 text-neon-400"></i>9. Suspension et résiliation</h2>
+    <p>Nous pouvons suspendre ou supprimer un compte en cas de violation des présentes conditions, notamment en cas de fraude au parrainage, de comportement abusif ou d'activité illégale. Vous pouvez supprimer votre compte à tout moment depuis les paramètres — l'effacement des données intervient sous 30 jours.</p>
+
+    <h2><i data-lucide="refresh-cw" class="w-6 h-6 text-neon-400"></i>10. Modifications du service</h2>
+    <p>Nous pouvons faire évoluer le service et ses conditions. En cas de changement substantiel, nous vous en informerons par email et/ou dans l'application. La date en haut de page reflète la dernière révision.</p>
+
+    <h2><i data-lucide="gavel" class="w-6 h-6 text-neon-400"></i>11. Droit applicable</h2>
+    <p>Les présentes conditions sont régies par le droit français. Tout litige relève de la compétence des tribunaux français, sauf disposition impérative contraire.</p>
+
+    <h2><i data-lucide="mail" class="w-6 h-6 text-neon-400"></i>12. Contact</h2>
+    <p>Pour toute question sur ces conditions : <a href="mailto:legal@stackia.trade">legal@stackia.trade</a>.</p>
+
+  </div>
+</section>
+
+<footer class="border-t border-white/5 bg-black/80 py-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2"><div class="w-7 h-7 rounded-lg bg-gradient-to-br from-neon-500 to-neon-700 flex items-center justify-center"><i data-lucide="layers" class="w-4 h-4 text-white"></i></div><span class="text-sm font-semibold text-white">Stack<span class="gradient-text">ia</span></span></div>
+      <p class="text-xs text-gray-600">© 2026 Stackia. Simulation uniquement — aucun conseil financier.</p>
+      <div class="flex flex-wrap items-center justify-center gap-4 text-xs text-gray-500">
+        <a href="features.html" class="hover:text-neon-400">Fonctionnalités</a>
+        <a href="pricing.html" class="hover:text-neon-400">Tarifs</a>
+        <a href="faq.html" class="hover:text-neon-400">FAQ</a>
+        <a href="news.html" class="hover:text-neon-400">Actualités</a>
+        <a href="privacy-policy.html" class="hover:text-neon-400">Confidentialité</a>
+        <a href="terms.html" class="hover:text-neon-400">Conditions</a>
+        <a href="about.html" class="hover:text-neon-400">À propos</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  lucide.createIcons();
+  const btn=document.getElementById('mobile-menu-btn'),menu=document.getElementById('mobile-menu');
+  btn.addEventListener('click',()=>menu.classList.toggle('hidden'));
+  const nav=document.getElementById('main-nav');
+  window.addEventListener('scroll',()=>{if(window.scrollY>50)nav.classList.add('bg-black/90','shadow-lg');else nav.classList.remove('bg-black/90','shadow-lg');});
+</script>
+</body>
+</html>

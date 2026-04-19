@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ — Stackia</title>
+<meta name="description" content="Réponses aux questions fréquentes sur Stackia : fonctionnement, sécurité, prix, Premium, données.">
+<meta name="theme-color" content="#7c3aed">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{neon:{50:'#f3e8ff',100:'#e9d5ff',200:'#d8b4fe',300:'#c084fc',400:'#a855f7',500:'#9333ea',600:'#7c3aed',700:'#6d28d9',800:'#5b21b6',900:'#4c1d95'}}}}}</script>
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',system-ui,sans-serif;background:#000;color:#e2e8f0;overflow-x:hidden}
+  ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:#0a0a0a}::-webkit-scrollbar-thumb{background:#7c3aed;border-radius:999px}
+  .hero-bg{position:relative;overflow:hidden}
+  .hero-bg::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;
+    background:radial-gradient(ellipse at 30% 20%,rgba(124,58,237,.15) 0%,transparent 50%),radial-gradient(ellipse at 70% 80%,rgba(168,85,247,.10) 0%,transparent 50%);
+    animation:bgPulse 8s ease-in-out infinite alternate;z-index:0}
+  @keyframes bgPulse{0%{transform:translate(0,0) scale(1)}100%{transform:translate(-3%,3%) scale(1.05)}}
+  .glow-btn{transition:all .3s ease;box-shadow:0 0 20px rgba(124,58,237,.3),0 0 60px rgba(124,58,237,.1)}
+  .glow-btn:hover{box-shadow:0 0 30px rgba(168,85,247,.6),0 0 80px rgba(168,85,247,.3);transform:translateY(-2px)}
+  .gradient-text{background:linear-gradient(135deg,#c084fc,#7c3aed);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .gradient-text-bright{background:linear-gradient(135deg,#e9d5ff,#a855f7);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .grid-overlay{position:absolute;inset:0;z-index:0;background-image:linear-gradient(rgba(124,58,237,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(124,58,237,.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+  .nav-blur{backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+  details{border:1px solid rgba(124,58,237,.15);transition:all .3s ease}
+  details:hover{border-color:rgba(168,85,247,.35)}
+  details[open]{border-color:rgba(168,85,247,.4);background:rgba(124,58,237,.05)}
+  details summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+  details summary::-webkit-details-marker{display:none}
+  details summary .chev{transition:transform .3s ease}
+  details[open] summary .chev{transform:rotate(180deg)}
+  details[open] .answer{animation:slideDown .3s ease}
+  @keyframes slideDown{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+</style>
+</head>
+<body>
+
+<nav id="main-nav" class="fixed top-0 inset-x-0 z-50 nav-blur bg-black/70 border-b border-white/5 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 sm:h-20">
+      <a href="index.html" class="flex items-center gap-2 group">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-neon-500 to-neon-700 flex items-center justify-center shadow-lg shadow-neon-500/20"><i data-lucide="layers" class="w-5 h-5 text-white"></i></div>
+        <span class="text-xl font-bold text-white">Stack<span class="gradient-text">ia</span></span>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="features.html" class="text-sm text-gray-400 hover:text-white transition-colors">Fonctionnalités</a>
+        <a href="how-it-works.html" class="text-sm text-gray-400 hover:text-white transition-colors">Comment ça marche</a>
+        <a href="pricing.html" class="text-sm text-gray-400 hover:text-white transition-colors">Tarifs</a>
+        <a href="faq.html" class="text-sm text-white font-semibold">FAQ</a>
+        <a href="news.html" class="text-sm text-gray-400 hover:text-white transition-colors">Actualités</a>
+        <a href="about.html" class="text-sm text-gray-400 hover:text-white transition-colors">À propos</a>
+        <a href="https://app.stackia.trade/" target="_blank" rel="noopener" class="glow-btn inline-flex items-center gap-2 px-5 py-2.5 bg-neon-600 hover:bg-neon-500 text-white text-sm font-semibold rounded-full">Lancer la simulation <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+      </div>
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-400" aria-label="Menu"><i data-lucide="menu" class="w-6 h-6"></i></button>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden pb-4 border-t border-white/5 mt-2 pt-4 space-y-3">
+      <a href="features.html" class="block text-sm text-gray-400 py-2">Fonctionnalités</a>
+      <a href="how-it-works.html" class="block text-sm text-gray-400 py-2">Comment ça marche</a>
+      <a href="pricing.html" class="block text-sm text-gray-400 py-2">Tarifs</a>
+      <a href="faq.html" class="block text-sm text-white font-semibold py-2">FAQ</a>
+      <a href="news.html" class="block text-sm text-gray-400 py-2">Actualités</a>
+      <a href="about.html" class="block text-sm text-gray-400 py-2">À propos</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero-bg relative pt-32 sm:pt-40 pb-12">
+  <div class="grid-overlay"></div>
+  <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
+    <span data-aos="fade-down" class="inline-block px-4 py-1 bg-neon-900/30 border border-neon-800/30 rounded-full text-xs text-neon-300 uppercase tracking-widest mb-4">FAQ</span>
+    <h1 data-aos="fade-up" class="text-4xl sm:text-5xl md:text-6xl font-black leading-tight mb-6">Questions <span class="gradient-text-bright">fréquentes</span></h1>
+    <p data-aos="fade-up" data-aos-delay="150" class="text-base sm:text-lg text-gray-400">Tout ce que tu dois savoir avant (et pendant) ton utilisation de Stackia.</p>
+  </div>
+</section>
+
+<section class="relative py-12 sm:py-16 bg-black">
+  <div class="grid-overlay"></div>
+  <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6">
+
+    <div class="space-y-4">
+
+      <details data-aos="fade-up" class="rounded-2xl bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6">
+        <summary>
+          <div class="flex items-center gap-3"><i data-lucide="wallet" class="w-5 h-5 text-neon-400 flex-shrink-0"></i><span class="text-lg font-semibold text-white">Est-ce vraiment gratuit ?</span></div>
+          <i data-lucide="chevron-down" class="w-5 h-5 text-neon-400 chev flex-shrink-0"></i>
+        </summary>
+        <div class="answer mt-4 text-gray-400 leading-relaxed text-sm">
+          Oui, à 100 %. Le compte Basic est gratuit à vie, sans carte bancaire requise. Tu reçois 200 000 $ virtuels dès l'inscription. Premium offre des fonctionnalités supplémentaires (IA Agent, Stop Orders, Sell All…) et s'obtient via code ami (14 jours gratuits), code de classe EDU (Premium à vie) ou un abonnement payant à venir.
+        </div>
+      </details>
+
+      <details data-aos="fade-up" class="rounded-2xl bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6">
+        <summary>
+          <div class="flex items-center gap-3"><i data-lucide="dollar-sign" class="w-5 h-5 text-neon-400 flex-shrink-0"></i><span class="text-lg font-semibold text-white">L'argent investi est-il réel ?</span></div>
+          <i data-lucide="chevron-down" class="w-5 h-5 text-neon-400 chev flex-shrink-0"></i>
+        </summary>
+        <div class="answer mt-4 text-gray-400 leading-relaxed text-sm">
+          <strong class="text-white">Non.</strong> Stackia est un simulateur éducatif. Tu investis avec de l'argent <em>virtuel</em> uniquement. Tu ne peux rien perdre, ni rien retirer. L'objectif est d'apprendre les marchés et de tester des stratégies sans risque financier.
+        </div>
+      </details>
+
+      <details data-aos="fade-up" class="rounded-2xl bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6">
+        <summary>
+          <div class="flex items-center gap-3"><i data-lucide="activity" class="w-5 h-5 text-neon-400 flex-shrink-0"></i><span class="text-lg font-semibold text-white">Les prix sont-ils réels ?</span></div>
+          <i data-lucide="chevron-down" class="w-5 h-5 text-neon-400 chev flex-shrink-0"></i>
+        </summary>
+        <div class="answer mt-4 text-gray-400 leading-relaxed text-sm">
+          Oui, les prix sont récupérés en temps réel depuis <strong class="text-white">Yahoo Finance</strong> avec une actualisation à la minute. Ce ne sont pas des données de haute fréquence, mais ils reflètent fidèlement les marchés. Les mises à jour sont poussées via WebSockets (Socket.IO) — pas besoin de rafraîchir.
+        </div>
+      </details>
+
+      <details data-aos="fade-up" class="rounded-2xl bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6">
+        <summary>
+          <div class="flex items-center gap-3"><i data-lucide="gem" class="w-5 h-5 text-neon-400 flex-shrink-0"></i><span class="text-lg font-semibold text-white">Comment obtenir Premium gratuitement ?</span></div>
+          <i data-lucide="chevron-down" class="w-5 h-5 text-neon-400 chev flex-shrink-0"></i>
+        </summary>
+        <div class="answer mt-4 text-gray-400 leading-relaxed text-sm">
+          Deux façons principales : <br><br>
+          <strong class="text-white">1. Code ami</strong> — partage ton code de parrainage. Pour chaque ami inscrit via ton code, vous recevez <strong class="text-white">14 jours Premium offerts</strong> chacun.<br><br>
+          <strong class="text-white">2. Code de classe EDU</strong> — si ton enseignant a créé une classe Stackia, inscris-toi avec le code de classe et tu obtiens <strong class="text-white">Premium à vie</strong>.
+        </div>
+      </details>
+
+      <details data-aos="fade-up" class="rounded-2xl bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6">
+        <summary>
+          <div class="flex items-center gap-3"><i data-lucide="shield" class="w-5 h-5 text-neon-400 flex-shrink-0"></i><span class="text-lg font-semibold text-white">Mes données sont-elles sécurisées ?</span></div>
+          <i data-lucide="chevron-down" class="w-5 h-5 text-neon-400 chev flex-shrink-0"></i>
+        </summary>
+        <div class="answer mt-4 text-gray-400 leading-relaxed text-sm">
+          Oui. Les mots de passe sont hachés avec <strong class="text-white">bcrypt</strong>, les sessions utilisent des cookies HTTPOnly / SameSite=Lax, et l'OAuth Google repose sur un CSRF state. L'infrastructure utilise un rate-limiting et tourne derrière un reverse proxy. Aucune donnée bancaire n'est collectée puisque la plateforme est gratuite.
+        </div>
+      </details>
+
+      <details data-aos="fade-up" class="rounded-2xl bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6">
+        <summary>
+          <div class="flex items-center gap-3"><i data-lucide="bot" class="w-5 h-5 text-neon-400 flex-shrink-0"></i><span class="text-lg font-semibold text-white">L'IA peut-elle vraiment passer des trades à ma place ?</span></div>
+          <i data-lucide="chevron-down" class="w-5 h-5 text-neon-400 chev flex-shrink-0"></i>
+        </summary>
+        <div class="answer mt-4 text-gray-400 leading-relaxed text-sm">
+          En Premium, oui. L'IA (Groq Llama 3.3 70B) dispose d'outils (function calling) lui permettant de consulter ton portefeuille et de <strong class="text-white">proposer</strong> des trades via des Action Cards. Tu gardes toujours le contrôle : chaque trade est présenté avec un bouton <em>Confirmer / Annuler</em>. Rien ne part automatiquement sans ta validation.
+        </div>
+      </details>
+
+      <details data-aos="fade-up" class="rounded-2xl bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6">
+        <summary>
+          <div class="flex items-center gap-3"><i data-lucide="refresh-cw" class="w-5 h-5 text-neon-400 flex-shrink-0"></i><span class="text-lg font-semibold text-white">Puis-je réinitialiser mon compte ?</span></div>
+          <i data-lucide="chevron-down" class="w-5 h-5 text-neon-400 chev flex-shrink-0"></i>
+        </summary>
+        <div class="answer mt-4 text-gray-400 leading-relaxed text-sm">
+          Oui. Tu peux remettre ton solde à 200 000 $ et effacer ton historique depuis les paramètres. Note : un badge <strong class="text-white">« Tricheur »</strong> temporaire s'affiche pendant 24 h après une réinitialisation, pour garder le classement équitable.
+        </div>
+      </details>
+
+      <details data-aos="fade-up" class="rounded-2xl bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6">
+        <summary>
+          <div class="flex items-center gap-3"><i data-lucide="graduation-cap" class="w-5 h-5 text-neon-400 flex-shrink-0"></i><span class="text-lg font-semibold text-white">Je suis enseignant. Comment créer une classe ?</span></div>
+          <i data-lucide="chevron-down" class="w-5 h-5 text-neon-400 chev flex-shrink-0"></i>
+        </summary>
+        <div class="answer mt-4 text-gray-400 leading-relaxed text-sm">
+          Depuis ton profil, active le mode enseignant pour générer un <strong class="text-white">code de parrainage de classe</strong>. Partage-le à tes élèves : leur compte recevra automatiquement Premium à vie et tu accèdes à un dashboard de suivi.
+        </div>
+      </details>
+
+      <details data-aos="fade-up" class="rounded-2xl bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6">
+        <summary>
+          <div class="flex items-center gap-3"><i data-lucide="scale" class="w-5 h-5 text-neon-400 flex-shrink-0"></i><span class="text-lg font-semibold text-white">Est-ce un conseil financier ?</span></div>
+          <i data-lucide="chevron-down" class="w-5 h-5 text-neon-400 chev flex-shrink-0"></i>
+        </summary>
+        <div class="answer mt-4 text-gray-400 leading-relaxed text-sm">
+          <strong class="text-white">Non.</strong> Stackia n'est pas un courtier agréé et ne fournit aucun conseil d'investissement. C'est un outil pédagogique. Pour tes décisions sur les marchés réels, consulte un conseiller financier agréé.
+        </div>
+      </details>
+
+      <details data-aos="fade-up" class="rounded-2xl bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6">
+        <summary>
+          <div class="flex items-center gap-3"><i data-lucide="smartphone" class="w-5 h-5 text-neon-400 flex-shrink-0"></i><span class="text-lg font-semibold text-white">Y a-t-il une application mobile ?</span></div>
+          <i data-lucide="chevron-down" class="w-5 h-5 text-neon-400 chev flex-shrink-0"></i>
+        </summary>
+        <div class="answer mt-4 text-gray-400 leading-relaxed text-sm">
+          Stackia est une <strong class="text-white">PWA</strong> (Progressive Web App). Tu peux l'installer sur iOS, Android, Windows et Mac depuis ton navigateur, avec icône adaptative et notifications push. Pas besoin de passer par un app store.
+        </div>
+      </details>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="relative py-16 bg-gradient-to-b from-black via-[#05001a] to-black">
+  <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 text-center" data-aos="zoom-in">
+    <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-4">Une autre question ?</h2>
+    <p class="text-gray-400 mb-8">Le meilleur moyen d'apprendre, c'est d'essayer.</p>
+    <a href="https://app.stackia.trade/" target="_blank" rel="noopener" class="glow-btn inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-neon-600 to-neon-500 hover:from-neon-500 hover:to-neon-400 text-white font-bold rounded-full">
+      <i data-lucide="rocket" class="w-5 h-5"></i>Lancer la simulation<i data-lucide="arrow-right" class="w-5 h-5"></i>
+    </a>
+  </div>
+</section>
+
+<footer class="border-t border-white/5 bg-black/80 py-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2"><div class="w-7 h-7 rounded-lg bg-gradient-to-br from-neon-500 to-neon-700 flex items-center justify-center"><i data-lucide="layers" class="w-4 h-4 text-white"></i></div><span class="text-sm font-semibold text-white">Stack<span class="gradient-text">ia</span></span></div>
+      <p class="text-xs text-gray-600">© 2026 Stackia. Simulation uniquement — aucun conseil financier.</p>
+      <div class="flex flex-wrap items-center justify-center gap-4 text-xs text-gray-500">
+        <a href="features.html" class="hover:text-neon-400">Fonctionnalités</a>
+        <a href="pricing.html" class="hover:text-neon-400">Tarifs</a>
+        <a href="faq.html" class="hover:text-neon-400">FAQ</a>
+        <a href="news.html" class="hover:text-neon-400">Actualités</a>
+        <a href="privacy-policy.html" class="hover:text-neon-400">Confidentialité</a>
+        <a href="terms.html" class="hover:text-neon-400">Conditions</a>
+        <a href="about.html" class="hover:text-neon-400">À propos</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  AOS.init({duration:800,easing:'ease-out-cubic',once:true,offset:60});
+  lucide.createIcons();
+  const btn=document.getElementById('mobile-menu-btn'),menu=document.getElementById('mobile-menu');
+  btn.addEventListener('click',()=>menu.classList.toggle('hidden'));
+  const nav=document.getElementById('main-nav');
+  window.addEventListener('scroll',()=>{if(window.scrollY>50)nav.classList.add('bg-black/90','shadow-lg');else nav.classList.remove('bg-black/90','shadow-lg');});
+</script>
+</body>
+</html>

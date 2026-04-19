@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tarifs — Stackia</title>
+<meta name="description" content="Basic 100% gratuit ou Premium. 14 jours offerts via code ami, Premium à vie pour les étudiants inscrits avec un code de classe.">
+<meta name="theme-color" content="#7c3aed">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{neon:{50:'#f3e8ff',100:'#e9d5ff',200:'#d8b4fe',300:'#c084fc',400:'#a855f7',500:'#9333ea',600:'#7c3aed',700:'#6d28d9',800:'#5b21b6',900:'#4c1d95'}}}}}</script>
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',system-ui,sans-serif;background:#000;color:#e2e8f0;overflow-x:hidden}
+  ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:#0a0a0a}::-webkit-scrollbar-thumb{background:#7c3aed;border-radius:999px}
+  .hero-bg{position:relative;overflow:hidden}
+  .hero-bg::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;
+    background:radial-gradient(ellipse at 30% 20%,rgba(124,58,237,.15) 0%,transparent 50%),radial-gradient(ellipse at 70% 80%,rgba(168,85,247,.10) 0%,transparent 50%);
+    animation:bgPulse 8s ease-in-out infinite alternate;z-index:0}
+  @keyframes bgPulse{0%{transform:translate(0,0) scale(1)}100%{transform:translate(-3%,3%) scale(1.05)}}
+  .glow-btn{transition:all .3s ease;box-shadow:0 0 20px rgba(124,58,237,.3),0 0 60px rgba(124,58,237,.1)}
+  .glow-btn:hover{box-shadow:0 0 30px rgba(168,85,247,.6),0 0 80px rgba(168,85,247,.3);transform:translateY(-2px)}
+  .glow-card{transition:all .4s cubic-bezier(.4,0,.2,1);border:1px solid rgba(124,58,237,.15)}
+  .glow-card:hover{border-color:rgba(168,85,247,.5);box-shadow:0 0 30px rgba(124,58,237,.15);transform:translateY(-6px)}
+  .gradient-text{background:linear-gradient(135deg,#c084fc,#7c3aed);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .gradient-text-bright{background:linear-gradient(135deg,#e9d5ff,#a855f7);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .grid-overlay{position:absolute;inset:0;z-index:0;background-image:linear-gradient(rgba(124,58,237,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(124,58,237,.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+  .nav-blur{backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+  .premium-card{position:relative;background:linear-gradient(135deg,rgba(124,58,237,.15),rgba(168,85,247,.05));border:1px solid rgba(168,85,247,.4);box-shadow:0 0 40px rgba(124,58,237,.2)}
+  .premium-card::before{content:'';position:absolute;inset:-1px;border-radius:inherit;padding:1px;background:linear-gradient(135deg,#a855f7,#7c3aed,transparent);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+</style>
+</head>
+<body>
+
+<nav id="main-nav" class="fixed top-0 inset-x-0 z-50 nav-blur bg-black/70 border-b border-white/5 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 sm:h-20">
+      <a href="index.html" class="flex items-center gap-2 group">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-neon-500 to-neon-700 flex items-center justify-center shadow-lg shadow-neon-500/20"><i data-lucide="layers" class="w-5 h-5 text-white"></i></div>
+        <span class="text-xl font-bold text-white">Stack<span class="gradient-text">ia</span></span>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="features.html" class="text-sm text-gray-400 hover:text-white transition-colors">Fonctionnalités</a>
+        <a href="how-it-works.html" class="text-sm text-gray-400 hover:text-white transition-colors">Comment ça marche</a>
+        <a href="pricing.html" class="text-sm text-white font-semibold">Tarifs</a>
+        <a href="faq.html" class="text-sm text-gray-400 hover:text-white transition-colors">FAQ</a>
+        <a href="news.html" class="text-sm text-gray-400 hover:text-white transition-colors">Actualités</a>
+        <a href="about.html" class="text-sm text-gray-400 hover:text-white transition-colors">À propos</a>
+        <a href="https://app.stackia.trade/" target="_blank" rel="noopener" class="glow-btn inline-flex items-center gap-2 px-5 py-2.5 bg-neon-600 hover:bg-neon-500 text-white text-sm font-semibold rounded-full">Lancer la simulation <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+      </div>
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-400" aria-label="Menu"><i data-lucide="menu" class="w-6 h-6"></i></button>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden pb-4 border-t border-white/5 mt-2 pt-4 space-y-3">
+      <a href="features.html" class="block text-sm text-gray-400 py-2">Fonctionnalités</a>
+      <a href="how-it-works.html" class="block text-sm text-gray-400 py-2">Comment ça marche</a>
+      <a href="pricing.html" class="block text-sm text-white font-semibold py-2">Tarifs</a>
+      <a href="faq.html" class="block text-sm text-gray-400 py-2">FAQ</a>
+      <a href="news.html" class="block text-sm text-gray-400 py-2">Actualités</a>
+      <a href="about.html" class="block text-sm text-gray-400 py-2">À propos</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero-bg relative pt-32 sm:pt-40 pb-12">
+  <div class="grid-overlay"></div>
+  <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center">
+    <span data-aos="fade-down" class="inline-block px-4 py-1 bg-neon-900/30 border border-neon-800/30 rounded-full text-xs text-neon-300 uppercase tracking-widest mb-4">Tarifs</span>
+    <h1 data-aos="fade-up" class="text-4xl sm:text-5xl md:text-6xl font-black leading-tight mb-6">Simple, <span class="gradient-text-bright">honnête</span>, sans piège.</h1>
+    <p data-aos="fade-up" data-aos-delay="150" class="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto">Commence gratuitement avec 200 000 $ virtuels. Passe à Premium quand tu veux — et découvre plusieurs façons de l'obtenir sans payer.</p>
+  </div>
+</section>
+
+<section class="relative py-12 sm:py-16 bg-black">
+  <div class="grid-overlay"></div>
+  <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+
+      <!-- BASIC -->
+      <div data-aos="fade-right" class="glow-card rounded-2xl bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-8">
+        <div class="flex items-center gap-3 mb-2">
+          <div class="w-10 h-10 rounded-xl bg-neon-600/10 border border-neon-600/20 flex items-center justify-center"><i data-lucide="rocket" class="w-5 h-5 text-neon-400"></i></div>
+          <h3 class="text-2xl font-bold text-white">Basic</h3>
+        </div>
+        <p class="text-gray-400 text-sm mb-6">Parfait pour commencer et apprendre</p>
+        <div class="mb-6">
+          <span class="text-5xl font-black text-white">0 €</span>
+          <span class="text-gray-500 ml-2">/ à vie</span>
+        </div>
+        <a href="https://app.stackia.trade/" target="_blank" rel="noopener" class="block text-center px-6 py-3 border border-white/10 hover:border-neon-500/40 hover:bg-white/5 text-white font-semibold rounded-full transition-all mb-8">S'inscrire gratuitement</a>
+        <ul class="space-y-3 text-sm text-gray-300">
+          <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-neon-400 flex-shrink-0 mt-0.5"></i>200 000 $ virtuels à l'inscription</li>
+          <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-neon-400 flex-shrink-0 mt-0.5"></i>36 actifs temps réel (actions, cryptos, matières premières, indices)</li>
+          <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-neon-400 flex-shrink-0 mt-0.5"></i>Paris Polymarket</li>
+          <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-neon-400 flex-shrink-0 mt-0.5"></i>Messagerie 1:1 et groupes</li>
+          <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-neon-400 flex-shrink-0 mt-0.5"></i>Actualités financières &amp; classement</li>
+          <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-neon-400 flex-shrink-0 mt-0.5"></i>PWA installable + notifications push</li>
+          <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-neon-400 flex-shrink-0 mt-0.5"></i>Auth Google OAuth</li>
+          <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-neon-400 flex-shrink-0 mt-0.5"></i>IA Gemini (5 requêtes/jour)</li>
+        </ul>
+      </div>
+
+      <!-- PREMIUM -->
+      <div data-aos="fade-left" class="premium-card rounded-2xl p-8 relative">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-gradient-to-r from-neon-500 to-neon-600 rounded-full text-xs font-bold text-white uppercase tracking-wider">Recommandé</div>
+        <div class="flex items-center gap-3 mb-2">
+          <div class="w-10 h-10 rounded-xl bg-neon-600/30 border border-neon-400/40 flex items-center justify-center"><i data-lucide="gem" class="w-5 h-5 text-neon-200"></i></div>
+          <h3 class="text-2xl font-bold text-white">Premium</h3>
+        </div>
+        <p class="text-gray-400 text-sm mb-6">Pour les traders qui veulent aller plus loin</p>
+        <div class="mb-6">
+          <span class="text-5xl font-black gradient-text-bright">Bientôt</span>
+          <p class="text-xs text-neon-300 mt-2 uppercase tracking-wider">Tarif à venir</p>
+        </div>
+        <a href="#obtenir-premium" class="block text-center px-6 py-3 bg-gradient-to-r from-neon-600 to-neon-500 hover:from-neon-500 hover:to-neon-400 text-white font-semibold rounded-full transition-all glow-btn mb-8">Comment l'obtenir gratuitement</a>
+        <p class="text-xs text-neon-300 font-semibold uppercase tracking-wider mb-3">Tout Basic, plus :</p>
+        <ul class="space-y-3 text-sm text-gray-300">
+          <li class="flex gap-3"><i data-lucide="sparkles" class="w-5 h-5 text-neon-300 flex-shrink-0 mt-0.5"></i><span><strong class="text-white">IA Agent autonome</strong> (Groq Llama 3.3 70B) — peut exécuter tes trades</span></li>
+          <li class="flex gap-3"><i data-lucide="brain" class="w-5 h-5 text-neon-300 flex-shrink-0 mt-0.5"></i>Mémoire contextuelle 10 messages</li>
+          <li class="flex gap-3"><i data-lucide="message-circle" class="w-5 h-5 text-neon-300 flex-shrink-0 mt-0.5"></i>100 requêtes IA/jour (vs 5 en Basic)</li>
+          <li class="flex gap-3"><i data-lucide="gauge" class="w-5 h-5 text-neon-300 flex-shrink-0 mt-0.5"></i><strong class="text-white">Stop Orders</strong> : Stop Loss, Stop Buy, Autobuy</li>
+          <li class="flex gap-3"><i data-lucide="zap" class="w-5 h-5 text-neon-300 flex-shrink-0 mt-0.5"></i><strong class="text-white">Sell All</strong> — tout liquider en 1 clic</li>
+          <li class="flex gap-3"><i data-lucide="image" class="w-5 h-5 text-neon-300 flex-shrink-0 mt-0.5"></i>Backgrounds personnalisés en messagerie</li>
+          <li class="flex gap-3"><i data-lucide="star" class="w-5 h-5 text-neon-300 flex-shrink-0 mt-0.5"></i>Badge ⭐ VIP sur profil &amp; classement</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO GET PREMIUM -->
+<section id="obtenir-premium" class="relative py-16 sm:py-20 bg-gradient-to-b from-black via-[#05001a] to-black">
+  <div class="grid-overlay"></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12" data-aos="fade-up">
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-3">3 façons d'obtenir <span class="gradient-text">Premium</span></h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">Notre communauté récompense le partage et l'apprentissage.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div data-aos="fade-up" class="glow-card rounded-2xl bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6">
+        <div class="w-14 h-14 rounded-2xl bg-neon-600/10 border border-neon-600/20 flex items-center justify-center mb-4"><i data-lucide="user-plus" class="w-7 h-7 text-neon-400"></i></div>
+        <h3 class="text-lg font-bold text-white mb-2">Code ami</h3>
+        <p class="text-sm text-gray-400 leading-relaxed mb-3">Invite un ami avec ton code de parrainage : vous recevez <strong class="text-white">14 jours Premium gratuits</strong>, toi et ton filleul.</p>
+        <span class="text-xs text-neon-300 uppercase tracking-wider font-semibold">Protection anti-fraude par device hash</span>
+      </div>
+      <div data-aos="fade-up" data-aos-delay="100" class="glow-card rounded-2xl bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6">
+        <div class="w-14 h-14 rounded-2xl bg-neon-600/10 border border-neon-600/20 flex items-center justify-center mb-4"><i data-lucide="graduation-cap" class="w-7 h-7 text-neon-400"></i></div>
+        <h3 class="text-lg font-bold text-white mb-2">Code de classe EDU</h3>
+        <p class="text-sm text-gray-400 leading-relaxed mb-3">Si tu es élève, inscris-toi via le code de parrainage de ta classe pour obtenir <strong class="text-white">Premium à vie</strong>.</p>
+        <span class="text-xs text-neon-300 uppercase tracking-wider font-semibold">Sans limite de durée</span>
+      </div>
+      <div data-aos="fade-up" data-aos-delay="200" class="glow-card rounded-2xl bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6">
+        <div class="w-14 h-14 rounded-2xl bg-neon-600/10 border border-neon-600/20 flex items-center justify-center mb-4"><i data-lucide="credit-card" class="w-7 h-7 text-neon-400"></i></div>
+        <h3 class="text-lg font-bold text-white mb-2">Abonnement</h3>
+        <p class="text-sm text-gray-400 leading-relaxed mb-3">Une formule payante sera bientôt disponible pour ceux qui souhaitent soutenir le projet et débloquer Premium directement.</p>
+        <span class="text-xs text-neon-300 uppercase tracking-wider font-semibold">À venir</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="relative py-16 bg-black">
+  <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 text-center" data-aos="zoom-in">
+    <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-4">Prêt à commencer ?</h2>
+    <p class="text-gray-400 mb-8">Aucune carte bancaire requise. Ton compte est prêt en 30 secondes.</p>
+    <a href="https://app.stackia.trade/" target="_blank" rel="noopener" class="glow-btn inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-neon-600 to-neon-500 hover:from-neon-500 hover:to-neon-400 text-white font-bold rounded-full">
+      <i data-lucide="rocket" class="w-5 h-5"></i>Commence à trader gratuitement<i data-lucide="arrow-right" class="w-5 h-5"></i>
+    </a>
+  </div>
+</section>
+
+<footer class="border-t border-white/5 bg-black/80 py-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2"><div class="w-7 h-7 rounded-lg bg-gradient-to-br from-neon-500 to-neon-700 flex items-center justify-center"><i data-lucide="layers" class="w-4 h-4 text-white"></i></div><span class="text-sm font-semibold text-white">Stack<span class="gradient-text">ia</span></span></div>
+      <p class="text-xs text-gray-600">© 2026 Stackia. Simulation uniquement — aucun conseil financier.</p>
+      <div class="flex flex-wrap items-center justify-center gap-4 text-xs text-gray-500">
+        <a href="features.html" class="hover:text-neon-400">Fonctionnalités</a>
+        <a href="pricing.html" class="hover:text-neon-400">Tarifs</a>
+        <a href="faq.html" class="hover:text-neon-400">FAQ</a>
+        <a href="news.html" class="hover:text-neon-400">Actualités</a>
+        <a href="privacy-policy.html" class="hover:text-neon-400">Confidentialité</a>
+        <a href="terms.html" class="hover:text-neon-400">Conditions</a>
+        <a href="about.html" class="hover:text-neon-400">À propos</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  AOS.init({duration:800,easing:'ease-out-cubic',once:true,offset:60});
+  lucide.createIcons();
+  const btn=document.getElementById('mobile-menu-btn'),menu=document.getElementById('mobile-menu');
+  btn.addEventListener('click',()=>menu.classList.toggle('hidden'));
+  const nav=document.getElementById('main-nav');
+  window.addEventListener('scroll',()=>{if(window.scrollY>50)nav.classList.add('bg-black/90','shadow-lg');else nav.classList.remove('bg-black/90','shadow-lg');});
+</script>
+</body>
+</html>
