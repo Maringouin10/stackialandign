@@ -106,7 +106,7 @@
           Lancer la simulation <i data-lucide="arrow-right" class="w-4 h-4"></i>
         </a>
       </div>
-      <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-400" aria-label="Menu"><i data-lucide="menu" class="w-6 h-6"></i></button>
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-400" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu"><i data-lucide="menu" class="w-6 h-6"></i></button>
     </div>
     <div id="mobile-menu" class="md:hidden hidden pb-4 border-t border-white/5 mt-2 pt-4 space-y-3">
       <a href="features.html" class="block text-sm text-white font-semibold py-2">Fonctionnalités</a>
@@ -115,6 +115,7 @@
       <a href="faq.html" class="block text-sm text-gray-400 py-2">FAQ</a>
       <a href="news.html" class="block text-sm text-gray-400 py-2">Actualités</a>
       <a href="about.html" class="block text-sm text-gray-400 py-2">À propos</a>
+      <a href="https://app.stackia.trade/" target="_blank" rel="noopener" class="glow-btn inline-flex items-center gap-2 px-5 py-2.5 bg-neon-600 hover:bg-neon-500 text-white text-sm font-semibold rounded-full mt-2">Lancer la simulation <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
     </div>
   </div>
 </nav>
@@ -137,6 +138,14 @@
 <section class="relative py-16 sm:py-20 bg-black">
   <div class="grid-overlay"></div>
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Assets summary bar -->
+    <div data-aos="fade-up" class="flex flex-wrap justify-center gap-3 mb-10">
+      <span style="padding:0.4rem 1rem;border-radius:999px;border:1px solid rgba(124,58,237,0.25);background:rgba(124,58,237,0.08);font-size:0.8rem;color:#c084fc;font-weight:600;">15 actions</span>
+      <span style="padding:0.4rem 1rem;border-radius:999px;border:1px solid rgba(124,58,237,0.25);background:rgba(124,58,237,0.08);font-size:0.8rem;color:#c084fc;font-weight:600;">10 cryptos</span>
+      <span style="padding:0.4rem 1rem;border-radius:999px;border:1px solid rgba(124,58,237,0.25);background:rgba(124,58,237,0.08);font-size:0.8rem;color:#c084fc;font-weight:600;">6 matières premières</span>
+      <span style="padding:0.4rem 1rem;border-radius:999px;border:1px solid rgba(124,58,237,0.25);background:rgba(124,58,237,0.08);font-size:0.8rem;color:#c084fc;font-weight:600;">5 indices mondiaux</span>
+      <span style="padding:0.4rem 1rem;border-radius:999px;border:1px solid rgba(34,197,94,0.3);background:rgba(34,197,94,0.07);font-size:0.8rem;color:#4ade80;font-weight:700;">= 36 actifs au total</span>
+    </div>
     <div class="text-center mb-12" data-aos="fade-up">
       <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-3">Trading <span class="gradient-text">multi-actifs</span> en temps réel</h2>
       <p class="text-gray-400 max-w-2xl mx-auto">Prix mis à jour à la minute via Yahoo Finance, push WebSockets, graphiques historiques interactifs.</p>
@@ -185,7 +194,8 @@
         <h3 class="text-lg font-bold text-white mb-2">Paris Polymarket</h3>
         <p class="text-sm text-gray-400">Marchés de prédiction en temps réel. Pariez sur la politique, le sport, la crypto — résolution automatique à la clôture.</p>
       </div>
-      <div data-aos="fade-up" data-aos-delay="150" class="glow-card rounded-2xl bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6">
+      <div data-aos="fade-up" data-aos-delay="150" class="glow-card rounded-2xl bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6 relative overflow-hidden">
+        <span style="position:absolute;top:12px;right:12px;font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:2px 8px;border-radius:999px;background:linear-gradient(135deg,#7c3aed,#9333ea);color:white;">Nouveau</span>
         <div class="w-12 h-12 rounded-xl bg-neon-600/10 border border-neon-600/20 flex items-center justify-center mb-4"><i data-lucide="message-square" class="w-6 h-6 text-neon-400"></i></div>
         <h3 class="text-lg font-bold text-white mb-2">Messagerie sociale</h3>
         <p class="text-sm text-gray-400">Conversations 1:1 et groupes multi-participants, messages en temps réel (Socket.IO), badges non-lus, photos de profil.</p>
@@ -215,7 +225,8 @@
         <h3 class="text-lg font-bold text-white mb-2">Mode Éducation</h3>
         <p class="text-sm text-gray-400">Les enseignants créent des classes avec code dédié. Les élèves reçoivent Premium à vie.</p>
       </div>
-      <div data-aos="fade-up" data-aos-delay="150" class="glow-card rounded-2xl bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6">
+      <div data-aos="fade-up" data-aos-delay="150" class="glow-card rounded-2xl bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6 relative overflow-hidden">
+        <span style="position:absolute;top:12px;right:12px;font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:2px 8px;border-radius:999px;background:linear-gradient(135deg,#7c3aed,#9333ea);color:white;">Amélioré</span>
         <div class="w-12 h-12 rounded-xl bg-neon-600/10 border border-neon-600/20 flex items-center justify-center mb-4"><i data-lucide="bot" class="w-6 h-6 text-neon-400"></i></div>
         <h3 class="text-lg font-bold text-white mb-2">Assistant IA Basic</h3>
         <p class="text-sm text-gray-400">Chat IA Gemini 1.5 Flash, 5 requêtes par jour. Réponses en français sur le marché et l'investissement.</p>

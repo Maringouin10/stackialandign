@@ -29,6 +29,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- CDN preconnect hints -->
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
 
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -297,6 +300,101 @@
         .counter {
             display: inline-block;
         }
+
+        /* ========== SCROLL PROGRESS BAR ========== */
+        #progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, #7c3aed, #a855f7, #c084fc);
+            z-index: 9999;
+            transition: width 0.1s linear;
+        }
+
+        /* ========== BACK TO TOP BUTTON ========== */
+        #back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 999;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #7c3aed, #9333ea);
+            border: 1px solid rgba(168,85,247,0.4);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 20px rgba(124,58,237,0.4);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            pointer-events: none;
+        }
+        #back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+        #back-to-top:hover {
+            box-shadow: 0 0 30px rgba(168,85,247,0.7);
+        }
+
+        /* ========== COOKIE BANNER ========== */
+        #cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 9998;
+            background: rgba(10,10,20,0.97);
+            border-top: 1px solid rgba(124,58,237,0.25);
+            backdrop-filter: blur(20px);
+            padding: 1rem 1.5rem;
+            transform: translateY(100%);
+            transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
+        }
+        #cookie-banner.show { transform: translateY(0); }
+
+        /* ========== TESTIMONIALS ========== */
+        .testimonial-card {
+            border: 1px solid rgba(124,58,237,0.15);
+            transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+        }
+        .testimonial-card:hover {
+            border-color: rgba(168,85,247,0.4);
+            box-shadow: 0 0 30px rgba(124,58,237,0.12);
+            transform: translateY(-4px);
+        }
+
+        /* ========== LIVE TOAST ========== */
+        #live-toast {
+            position: fixed;
+            bottom: 5.5rem;
+            right: 1.5rem;
+            z-index: 998;
+            background: rgba(10,10,20,0.95);
+            border: 1px solid rgba(124,58,237,0.3);
+            border-radius: 12px;
+            padding: 0.75rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            backdrop-filter: blur(16px);
+            box-shadow: 0 0 20px rgba(124,58,237,0.15);
+            opacity: 0;
+            transform: translateX(120%);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            max-width: 260px;
+        }
+        #live-toast.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
     </style>
 <style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:Inter, system-ui, sans-serif;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-x-0{left:0px;right:0px}.bottom-8{bottom:2rem}.left-1\/2{left:50%}.top-0{top:0px}.top-1\/2{top:50%}.z-10{z-index:10}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.mb-10{margin-bottom:2.5rem}.mb-16{margin-bottom:4rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mt-1{margin-top:0.25rem}.mt-14{margin-top:3.5rem}.mt-16{margin-top:4rem}.mt-2{margin-top:0.5rem}.mt-4{margin-top:1rem}.block{display:block}.inline-block{display:inline-block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-14{height:3.5rem}.h-16{height:4rem}.h-2{height:0.5rem}.h-20{height:5rem}.h-4{height:1rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.h-7{height:1.75rem}.h-8{height:2rem}.h-9{height:2.25rem}.h-\[600px\]{height:600px}.h-10{height:2.5rem}.h-3{height:0.75rem}.min-h-screen{min-height:100vh}.w-14{width:3.5rem}.w-16{width:4rem}.w-2{width:0.5rem}.w-4{width:1rem}.w-5{width:1.25rem}.w-6{width:1.5rem}.w-7{width:1.75rem}.w-8{width:2rem}.w-9{width:2.25rem}.w-\[600px\]{width:600px}.w-full{width:100%}.w-10{width:2.5rem}.w-3{width:0.75rem}.min-w-0{min-width:0px}.max-w-2xl{max-width:42rem}.max-w-3xl{max-width:48rem}.max-w-5xl{max-width:64rem}.max-w-7xl{max-width:80rem}.max-w-lg{max-width:32rem}.max-w-xl{max-width:36rem}.flex-1{flex:1 1 0%}.flex-shrink-0{flex-shrink:0}.-translate-x-1\/2{--tw-translate-x:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.-translate-y-1\/2{--tw-translate-y:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@keyframes bounce{0%, 100%{transform:translateY(-25%);animation-timing-function:cubic-bezier(0.8,0,1,1)}50%{transform:none;animation-timing-function:cubic-bezier(0,0,0.2,1)}}.animate-bounce{animation:bounce 1s infinite}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.gap-1{gap:0.25rem}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.scroll-smooth{scroll-behavior:smooth}.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.rounded-2xl{border-radius:1rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-neon-600\/20{border-color:rgb(124 58 237 / 0.2)}.border-neon-700\/30{border-color:rgb(109 40 217 / 0.3)}.border-neon-800\/30{border-color:rgb(91 33 182 / 0.3)}.border-red-500\/20{border-color:rgb(239 68 68 / 0.2)}.border-white\/10{border-color:rgb(255 255 255 / 0.1)}.border-white\/5{border-color:rgb(255 255 255 / 0.05)}.border-amber-600\/30{border-color:rgb(217 119 6 / 0.3)}.border-gray-400\/30{border-color:rgb(156 163 175 / 0.3)}.border-neon-500\/30{border-color:rgb(147 51 234 / 0.3)}.border-neon-600\/30{border-color:rgb(124 58 237 / 0.3)}.border-yellow-500\/30{border-color:rgb(234 179 8 / 0.3)}.bg-black{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity, 1))}.bg-black\/70{background-color:rgb(0 0 0 / 0.7)}.bg-black\/80{background-color:rgb(0 0 0 / 0.8)}.bg-neon-400{--tw-bg-opacity:1;background-color:rgb(168 85 247 / var(--tw-bg-opacity, 1))}.bg-neon-600{--tw-bg-opacity:1;background-color:rgb(124 58 237 / var(--tw-bg-opacity, 1))}.bg-neon-600\/10{background-color:rgb(124 58 237 / 0.1)}.bg-neon-900\/30{background-color:rgb(76 29 149 / 0.3)}.bg-neon-900\/40{background-color:rgb(76 29 149 / 0.4)}.bg-red-500\/10{background-color:rgb(239 68 68 / 0.1)}.bg-amber-600\/5{background-color:rgb(217 119 6 / 0.05)}.bg-gray-400\/5{background-color:rgb(156 163 175 / 0.05)}.bg-neon-600\/20{background-color:rgb(124 58 237 / 0.2)}.bg-white\/5{background-color:rgb(255 255 255 / 0.05)}.bg-yellow-500\/5{background-color:rgb(234 179 8 / 0.05)}.bg-black\/90{background-color:rgb(0 0 0 / 0.9)}.bg-gradient-to-b{background-image:linear-gradient(to bottom, var(--tw-gradient-stops))}.bg-gradient-to-br{background-image:linear-gradient(to bottom right, var(--tw-gradient-stops))}.bg-gradient-to-r{background-image:linear-gradient(to right, var(--tw-gradient-stops))}.from-black{--tw-gradient-from:#000 var(--tw-gradient-from-position);--tw-gradient-to:rgb(0 0 0 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-neon-500{--tw-gradient-from:#9333ea var(--tw-gradient-from-position);--tw-gradient-to:rgb(147 51 234 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-neon-600{--tw-gradient-from:#7c3aed var(--tw-gradient-from-position);--tw-gradient-to:rgb(124 58 237 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-white\/\[0\.04\]{--tw-gradient-from:rgb(255 255 255 / 0.04) var(--tw-gradient-from-position);--tw-gradient-to:rgb(255 255 255 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-\[\#05001a\]{--tw-gradient-to:rgb(5 0 26 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #05001a var(--tw-gradient-via-position), var(--tw-gradient-to)}.via-\[\#0d0025\]{--tw-gradient-to:rgb(13 0 37 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #0d0025 var(--tw-gradient-via-position), var(--tw-gradient-to)}.to-black{--tw-gradient-to:#000 var(--tw-gradient-to-position)}.to-neon-500{--tw-gradient-to:#9333ea var(--tw-gradient-to-position)}.to-neon-700{--tw-gradient-to:#6d28d9 var(--tw-gradient-to-position)}.to-neon-800{--tw-gradient-to:#5b21b6 var(--tw-gradient-to-position)}.to-white\/\[0\.01\]{--tw-gradient-to:rgb(255 255 255 / 0.01) var(--tw-gradient-to-position)}.object-cover{object-fit:cover}.p-2{padding:0.5rem}.p-8{padding:2rem}.p-4{padding:1rem}.px-10{padding-left:2.5rem;padding-right:2.5rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-8{padding-left:2rem;padding-right:2rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-10{padding-top:2.5rem;padding-bottom:2.5rem}.py-12{padding-top:3rem;padding-bottom:3rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.py-20{padding-top:5rem;padding-bottom:5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-5{padding-top:1.25rem;padding-bottom:1.25rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.pb-16{padding-bottom:4rem}.pb-4{padding-bottom:1rem}.pt-20{padding-top:5rem}.pt-4{padding-top:1rem}.text-center{text-align:center}.text-right{text-align:right}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.text-\[10px\]{font-size:10px}.font-black{font-weight:900}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-relaxed{line-height:1.625}.leading-tight{line-height:1.25}.tracking-tight{letter-spacing:-0.025em}.tracking-widest{letter-spacing:0.1em}.tracking-wider{letter-spacing:0.05em}.text-gray-300{--tw-text-opacity:1;color:rgb(209 213 219 / var(--tw-text-opacity, 1))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-neon-300{--tw-text-opacity:1;color:rgb(192 132 252 / var(--tw-text-opacity, 1))}.text-neon-400{--tw-text-opacity:1;color:rgb(168 85 247 / var(--tw-text-opacity, 1))}.text-red-400{--tw-text-opacity:1;color:rgb(248 113 113 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-neon-500\/20{--tw-shadow-color:rgb(147 51 234 / 0.2);--tw-shadow:var(--tw-shadow-colored)}.shadow-neon-600\/20{--tw-shadow-color:rgb(124 58 237 / 0.2);--tw-shadow:var(--tw-shadow-colored)}.shadow-neon-900\/10{--tw-shadow-color:rgb(76 29 149 / 0.1);--tw-shadow:var(--tw-shadow-colored)}.blur-\[120px\]{--tw-blur:blur(120px);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-shadow{transition-property:box-shadow;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.hover\:border-neon-500\/40:hover{border-color:rgb(147 51 234 / 0.4)}.hover\:bg-neon-500:hover{--tw-bg-opacity:1;background-color:rgb(147 51 234 / var(--tw-bg-opacity, 1))}.hover\:bg-white\/5:hover{background-color:rgb(255 255 255 / 0.05)}.hover\:from-neon-500:hover{--tw-gradient-from:#9333ea var(--tw-gradient-from-position);--tw-gradient-to:rgb(147 51 234 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.hover\:to-neon-400:hover{--tw-gradient-to:#a855f7 var(--tw-gradient-to-position)}.hover\:text-neon-400:hover{--tw-text-opacity:1;color:rgb(168 85 247 / var(--tw-text-opacity, 1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.group:hover .group-hover\:shadow-neon-500\/40{--tw-shadow-color:rgb(147 51 234 / 0.4);--tw-shadow:var(--tw-shadow-colored)}@media (min-width: 640px){.sm\:h-20{height:5rem}.sm\:h-12{height:3rem}.sm\:w-12{width:3rem}.sm\:flex-row{flex-direction:row}.sm\:gap-4{gap:1rem}.sm\:p-5{padding:1.25rem}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:py-28{padding-top:7rem;padding-bottom:7rem}.sm\:pb-20{padding-bottom:5rem}.sm\:pt-24{padding-top:6rem}.sm\:text-3xl{font-size:1.875rem;line-height:2.25rem}.sm\:text-4xl{font-size:2.25rem;line-height:2.5rem}.sm\:text-5xl{font-size:3rem;line-height:1}.sm\:text-lg{font-size:1.125rem;line-height:1.75rem}.sm\:text-sm{font-size:0.875rem;line-height:1.25rem}.sm\:text-base{font-size:1rem;line-height:1.5rem}.sm\:text-xs{font-size:0.75rem;line-height:1rem}}@media (min-width: 768px){.md\:mx-0{margin-left:0px;margin-right:0px}.md\:flex{display:flex}.md\:hidden{display:none}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:text-left{text-align:left}.md\:text-5xl{font-size:3rem;line-height:1}.md\:text-6xl{font-size:3.75rem;line-height:1}.md\:text-xl{font-size:1.25rem;line-height:1.75rem}}@media (min-width: 1024px){.lg\:gap-12{gap:3rem}.lg\:gap-8{gap:2rem}.lg\:px-8{padding-left:2rem;padding-right:2rem}.lg\:text-7xl{font-size:4.5rem;line-height:1}}</style>
     <script type="application/ld+json">
@@ -313,6 +411,34 @@
 </head>
 
 <body data-aos-easing="ease-out-cubic" data-aos-duration="800" data-aos-delay="0">
+
+    <!-- Scroll progress bar -->
+    <div id="progress-bar"></div>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" aria-label="Retour en haut" title="Retour en haut">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+    </button>
+
+    <!-- Live activity toast -->
+    <div id="live-toast">
+        <span style="width:8px;height:8px;border-radius:50%;background:#22c55e;flex-shrink:0;box-shadow:0 0 6px #22c55e;"></span>
+        <span id="live-toast-msg" style="font-size:0.75rem;color:#d1d5db;line-height:1.4;"></span>
+    </div>
+
+    <!-- Cookie consent banner -->
+    <div id="cookie-banner" role="dialog" aria-label="Consentement cookies">
+        <div style="max-width:80rem;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;">
+            <p style="font-size:0.8125rem;color:#9ca3af;max-width:600px;">
+                🍪 Stackia utilise des cookies fonctionnels pour améliorer votre expérience. Aucun cookie publicitaire ou de tracking tiers n'est utilisé.
+                <a href="privacy-policy.html" style="color:#a855f7;text-decoration:underline;margin-left:4px;">Politique de confidentialité</a>
+            </p>
+            <div style="display:flex;gap:0.75rem;flex-shrink:0;">
+                <button id="cookie-reject" style="font-size:0.8125rem;color:#6b7280;padding:0.5rem 1rem;border:1px solid rgba(255,255,255,0.1);border-radius:999px;background:transparent;cursor:pointer;transition:all 0.2s;">Refuser</button>
+                <button id="cookie-accept" style="font-size:0.8125rem;color:white;padding:0.5rem 1.25rem;border-radius:999px;background:linear-gradient(135deg,#7c3aed,#9333ea);cursor:pointer;border:none;font-weight:600;box-shadow:0 0 16px rgba(124,58,237,0.4);transition:all 0.2s;">Accepter</button>
+            </div>
+        </div>
+    </div>
 
     <!-- ===================== NAVIGATION ===================== -->
     <nav id="main-nav" class="fixed top-0 inset-x-0 z-50 nav-blur bg-black/70 border-b border-white/5 transition-all duration-300">
@@ -342,7 +468,7 @@
                 </div>
 
                 <!-- Mobile menu button -->
-                <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-400 hover:text-white transition-colors" aria-label="Menu">
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-400 hover:text-white transition-colors" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="menu" aria-hidden="true" class="lucide lucide-menu w-6 h-6"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg>
                 </button>
             </div>
@@ -366,8 +492,8 @@
 
     <!-- ===================== HERO SECTION ===================== -->
     <section class="hero-bg relative min-h-screen flex items-center justify-center pt-20 pb-16 sm:pt-24 sm:pb-20">
-        <!-- Particles -->
-        <div class="particles" id="particles-container"><div class="particle" style="width: 2.81698px; height: 2.81698px; left: 34.2354%; animation-duration: 24.3736s; animation-delay: 5.61972s; opacity: 0.100429;"></div><div class="particle" style="width: 2.79185px; height: 2.79185px; left: 97.3898%; animation-duration: 20.6934s; animation-delay: 6.95843s; opacity: 0.351565;"></div><div class="particle" style="width: 2.06423px; height: 2.06423px; left: 9.3321%; animation-duration: 21.2239s; animation-delay: 4.46166s; opacity: 0.447423;"></div><div class="particle" style="width: 2.85929px; height: 2.85929px; left: 58.8944%; animation-duration: 20.3903s; animation-delay: 8.19764s; opacity: 0.325316;"></div><div class="particle" style="width: 2.21882px; height: 2.21882px; left: 8.96248%; animation-duration: 12.0955s; animation-delay: 1.645s; opacity: 0.537422;"></div><div class="particle" style="width: 4.21837px; height: 4.21837px; left: 29.4773%; animation-duration: 20.5029s; animation-delay: 7.73018s; opacity: 0.5521;"></div><div class="particle" style="width: 4.22065px; height: 4.22065px; left: 3.25151%; animation-duration: 20.5404s; animation-delay: 4.04577s; opacity: 0.492949;"></div><div class="particle" style="width: 5.26324px; height: 5.26324px; left: 56.4937%; animation-duration: 12.5959s; animation-delay: 2.18072s; opacity: 0.484768;"></div><div class="particle" style="width: 5.29068px; height: 5.29068px; left: 7.06221%; animation-duration: 11.705s; animation-delay: 3.9205s; opacity: 0.121823;"></div><div class="particle" style="width: 3.92222px; height: 3.92222px; left: 46.8026%; animation-duration: 18.47s; animation-delay: 2.19906s; opacity: 0.139635;"></div><div class="particle" style="width: 4.00774px; height: 4.00774px; left: 67.4871%; animation-duration: 15.9798s; animation-delay: 5.43253s; opacity: 0.221821;"></div><div class="particle" style="width: 2.81438px; height: 2.81438px; left: 71.7666%; animation-duration: 10.4342s; animation-delay: 2.62308s; opacity: 0.424959;"></div><div class="particle" style="width: 5.77008px; height: 5.77008px; left: 61.9367%; animation-duration: 21.5859s; animation-delay: 1.49476s; opacity: 0.129239;"></div><div class="particle" style="width: 5.30504px; height: 5.30504px; left: 34.6248%; animation-duration: 11.0004s; animation-delay: 4.30303s; opacity: 0.491147;"></div><div class="particle" style="width: 4.81001px; height: 4.81001px; left: 77.1376%; animation-duration: 12.8226s; animation-delay: 4.62023s; opacity: 0.139283;"></div><div class="particle" style="width: 5.9361px; height: 5.9361px; left: 88.7181%; animation-duration: 19.3396s; animation-delay: 4.56227s; opacity: 0.153518;"></div><div class="particle" style="width: 4.63923px; height: 4.63923px; left: 80.3662%; animation-duration: 11.1997s; animation-delay: 9.25813s; opacity: 0.402712;"></div><div class="particle" style="width: 5.5755px; height: 5.5755px; left: 33.445%; animation-duration: 15.7262s; animation-delay: 3.51349s; opacity: 0.127647;"></div><div class="particle" style="width: 4.63418px; height: 4.63418px; left: 83.3492%; animation-duration: 17.5466s; animation-delay: 6.90213s; opacity: 0.536825;"></div><div class="particle" style="width: 4.41288px; height: 4.41288px; left: 7.65023%; animation-duration: 16.5438s; animation-delay: 2.51502s; opacity: 0.248365;"></div><div class="particle" style="width: 4.64647px; height: 4.64647px; left: 54.1132%; animation-duration: 14.5394s; animation-delay: 6.64877s; opacity: 0.585666;"></div><div class="particle" style="width: 4.61555px; height: 4.61555px; left: 70.9367%; animation-duration: 20.2516s; animation-delay: 9.02446s; opacity: 0.473816;"></div><div class="particle" style="width: 4.11825px; height: 4.11825px; left: 33.9547%; animation-duration: 10.84s; animation-delay: 0.115404s; opacity: 0.211888;"></div><div class="particle" style="width: 4.96403px; height: 4.96403px; left: 37.7502%; animation-duration: 10.1266s; animation-delay: 3.49354s; opacity: 0.2397;"></div><div class="particle" style="width: 4.29995px; height: 4.29995px; left: 15.789%; animation-duration: 14.2242s; animation-delay: 9.79478s; opacity: 0.169197;"></div><div class="particle" style="width: 5.7464px; height: 5.7464px; left: 61.0717%; animation-duration: 16.3268s; animation-delay: 7.29906s; opacity: 0.442556;"></div><div class="particle" style="width: 5.66344px; height: 5.66344px; left: 92.5743%; animation-duration: 16.7624s; animation-delay: 6.93722s; opacity: 0.339411;"></div><div class="particle" style="width: 5.87315px; height: 5.87315px; left: 32.9888%; animation-duration: 24.2566s; animation-delay: 3.48892s; opacity: 0.306726;"></div><div class="particle" style="width: 5.54158px; height: 5.54158px; left: 51.9728%; animation-duration: 13.5368s; animation-delay: 2.73162s; opacity: 0.490954;"></div><div class="particle" style="width: 3.69947px; height: 3.69947px; left: 72.7567%; animation-duration: 13.3813s; animation-delay: 6.59621s; opacity: 0.435948;"></div></div>
+        <!-- Particles — generated dynamically by JS -->
+        <div class="particles" id="particles-container"></div>
         <!-- Grid overlay -->
         <div class="grid-overlay"></div>
 
@@ -405,7 +531,7 @@
             </div>
 
             <!-- Stats bar -->
-            <div data-aos="fade-up" data-aos-delay="650" class="mt-16 grid grid-cols-3 gap-6 max-w-lg mx-auto aos-init aos-animate">
+            <div data-aos="fade-up" data-aos-delay="650" class="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-xl mx-auto aos-init aos-animate">
                 <div class="text-center">
                     <div class="text-2xl sm:text-3xl font-bold text-white counter" data-target="100">100+</div>
                     <div class="text-xs sm:text-sm text-gray-500 mt-1">Investisseurs</div>
@@ -417,6 +543,10 @@
                 <div class="text-center">
                     <div class="text-2xl sm:text-3xl font-bold text-white">24/7</div>
                     <div class="text-xs sm:text-sm text-gray-500 mt-1">Disponible</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl sm:text-3xl font-bold text-white counter" data-target="36">36+</div>
+                    <div class="text-xs sm:text-sm text-gray-500 mt-1">Actifs tradables</div>
                 </div>
             </div>
         </div>
@@ -733,6 +863,73 @@
         </div>
     </section>
 
+    <!-- ===================== TESTIMONIALS ===================== -->
+    <section class="relative py-20 sm:py-28 bg-gradient-to-b from-black via-[#05001a] to-black">
+        <div class="grid-overlay"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="inline-block px-4 py-1 bg-neon-900/30 border border-neon-800/30 rounded-full text-xs text-neon-300 uppercase tracking-widest mb-4">Témoignages</span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white">
+                    Ce qu'ils en <span class="gradient-text">pensent</span>
+                </h2>
+                <p class="mt-4 text-gray-400 max-w-xl mx-auto">Des apprenants de tous niveaux qui ont démarré avec 200 000 $ virtuels.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div data-aos="fade-up" data-aos-delay="100" class="testimonial-card rounded-2xl bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6 backdrop-blur-sm">
+                    <div class="flex items-center gap-1 mb-4">
+                        <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-5">"J'avais peur des marchés financiers. Stackia m'a permis de comprendre les actions sans aucun stress. En 2 semaines j'étais dans le top 20 du classement !"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-gradient-to-br from-neon-600 to-neon-800 flex items-center justify-center text-white text-sm font-bold flex-shrink-0">A</div>
+                        <div>
+                            <div class="text-sm font-semibold text-white">Alexandre M.</div>
+                            <div class="text-xs text-gray-500">Étudiant en finance</div>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200" class="testimonial-card rounded-2xl bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6 backdrop-blur-sm">
+                    <div class="flex items-center gap-1 mb-4">
+                        <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-5">"L'IA Premium est incroyable. Elle m'a expliqué pourquoi NVDA montait et m'a aidé à construire une stratégie de portefeuille diversifié. C'est comme avoir un conseiller perso !"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-gradient-to-br from-neon-600 to-neon-800 flex items-center justify-center text-white text-sm font-bold flex-shrink-0">S</div>
+                        <div>
+                            <div class="text-sm font-semibold text-white">Sophie L.</div>
+                            <div class="text-xs text-gray-500">Professeure, utilisatrice Premium</div>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="300" class="testimonial-card rounded-2xl bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6 backdrop-blur-sm">
+                    <div class="flex items-center gap-1 mb-4">
+                        <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-5">"Le classement mondial rend ça super addictif. Je reviens chaque jour pour optimiser mon portefeuille et dépasser mes amis. Meilleure app éducative de l'année !"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-gradient-to-br from-neon-600 to-neon-800 flex items-center justify-center text-white text-sm font-bold flex-shrink-0">T</div>
+                        <div>
+                            <div class="text-sm font-semibold text-white">Thomas B.</div>
+                            <div class="text-xs text-gray-500">Lycéen, top 5 mondial</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ===================== FINAL CTA ===================== -->
     <section class="relative py-20 sm:py-28 bg-gradient-to-b from-black via-[#0d0025] to-black overflow-hidden">
         <div class="grid-overlay"></div>
@@ -801,12 +998,22 @@
         // ===== MOBILE MENU =====
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+        function toggleMobileMenu(open) {
+            const isOpen = open !== undefined ? open : mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden', !isOpen);
+            mobileMenuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        }
+        mobileMenuBtn.addEventListener('click', () => toggleMobileMenu());
         // Close mobile menu on link click
         mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+            link.addEventListener('click', () => toggleMobileMenu(false));
+        });
+        // Escape key closes mobile menu
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+                toggleMobileMenu(false);
+                mobileMenuBtn.focus();
+            }
         });
 
         // ===== NAVBAR SCROLL EFFECT =====
@@ -987,5 +1194,64 @@
                 }
             });
         });
+
+        // ===== SCROLL PROGRESS BAR =====
+        const progressBar = document.getElementById('progress-bar');
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            progressBar.style.width = pct + '%';
+        }, { passive: true });
+
+        // ===== BACK TO TOP =====
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        }, { passive: true });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ===== COOKIE CONSENT =====
+        const cookieBanner = document.getElementById('cookie-banner');
+        const cookieAccept = document.getElementById('cookie-accept');
+        const cookieReject = document.getElementById('cookie-reject');
+        if (!localStorage.getItem('stackia_cookie_consent')) {
+            setTimeout(() => cookieBanner.classList.add('show'), 1500);
+        }
+        function dismissCookieBanner(accepted) {
+            cookieBanner.classList.remove('show');
+            localStorage.setItem('stackia_cookie_consent', accepted ? 'accepted' : 'rejected');
+        }
+        cookieAccept.addEventListener('click', () => dismissCookieBanner(true));
+        cookieReject.addEventListener('click', () => dismissCookieBanner(false));
+
+        // ===== LIVE ACTIVITY TOAST =====
+        const toastMessages = [
+            'jaycob vient de dépasser 264 000 $',
+            'Un nouvel utilisateur a rejoint Stackia',
+            'Marin a investi dans BTC',
+            'thomas a grimpé dans le classement',
+            'Un utilisateur a obtenu Premium via code ami',
+            'Nouveau trader inscrit en France',
+        ];
+        const liveToast = document.getElementById('live-toast');
+        const liveToastMsg = document.getElementById('live-toast-msg');
+        let toastIndex = 0;
+        function showLiveToast() {
+            liveToastMsg.textContent = toastMessages[toastIndex % toastMessages.length];
+            toastIndex++;
+            liveToast.classList.add('show');
+            setTimeout(() => liveToast.classList.remove('show'), 4000);
+        }
+        setTimeout(() => {
+            showLiveToast();
+            setInterval(showLiveToast, 18000);
+        }, 8000);
     </script>
 </body></html>

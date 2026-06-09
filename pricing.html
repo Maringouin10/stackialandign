@@ -83,7 +83,7 @@
         <a href="about.html" class="text-sm text-gray-400 hover:text-white transition-colors">À propos</a>
         <a href="https://app.stackia.trade/" target="_blank" rel="noopener" class="glow-btn inline-flex items-center gap-2 px-5 py-2.5 bg-neon-600 hover:bg-neon-500 text-white text-sm font-semibold rounded-full">Lancer la simulation <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
       </div>
-      <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-400" aria-label="Menu"><i data-lucide="menu" class="w-6 h-6"></i></button>
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-400" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu"><i data-lucide="menu" class="w-6 h-6"></i></button>
     </div>
     <div id="mobile-menu" class="md:hidden hidden pb-4 border-t border-white/5 mt-2 pt-4 space-y-3">
       <a href="features.html" class="block text-sm text-gray-400 py-2">Fonctionnalités</a>
@@ -92,6 +92,7 @@
       <a href="faq.html" class="block text-sm text-gray-400 py-2">FAQ</a>
       <a href="news.html" class="block text-sm text-gray-400 py-2">Actualités</a>
       <a href="about.html" class="block text-sm text-gray-400 py-2">À propos</a>
+      <a href="https://app.stackia.trade/" target="_blank" rel="noopener" class="glow-btn inline-flex items-center gap-2 px-5 py-2.5 bg-neon-600 hover:bg-neon-500 text-white text-sm font-semibold rounded-full mt-2">Lancer la simulation <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
     </div>
   </div>
 </nav>
@@ -163,6 +164,73 @@
   </div>
 </section>
 
+<!-- COMPARISON TABLE -->
+<section class="relative py-12 bg-black">
+  <div class="grid-overlay"></div>
+  <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-10" data-aos="fade-up">
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Comparaison <span class="gradient-text">détaillée</span></h2>
+    </div>
+    <div data-aos="fade-up" style="border:1px solid rgba(124,58,237,0.2);border-radius:1rem;overflow:hidden;">
+      <table style="width:100%;border-collapse:collapse;font-size:0.875rem;">
+        <thead>
+          <tr style="background:rgba(124,58,237,0.12);border-bottom:1px solid rgba(124,58,237,0.2);">
+            <th style="padding:1rem 1.25rem;text-align:left;color:#9ca3af;font-weight:600;width:50%;">Fonctionnalité</th>
+            <th style="padding:1rem;text-align:center;color:#e2e8f0;font-weight:700;">Basic</th>
+            <th style="padding:1rem;text-align:center;color:#c084fc;font-weight:700;">Premium ✦</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+            <td style="padding:0.875rem 1.25rem;color:#d1d5db;">Capital virtuel</td>
+            <td style="padding:0.875rem;text-align:center;color:#a855f7;font-weight:600;">200 000 $</td>
+            <td style="padding:0.875rem;text-align:center;color:#c084fc;font-weight:600;">200 000 $</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05);background:rgba(255,255,255,0.02);">
+            <td style="padding:0.875rem 1.25rem;color:#d1d5db;">Actifs tradables</td>
+            <td style="padding:0.875rem;text-align:center;color:#e2e8f0;">36</td>
+            <td style="padding:0.875rem;text-align:center;color:#e2e8f0;">36</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+            <td style="padding:0.875rem 1.25rem;color:#d1d5db;">IA Gemini (requêtes/jour)</td>
+            <td style="padding:0.875rem;text-align:center;color:#e2e8f0;">5</td>
+            <td style="padding:0.875rem;text-align:center;color:#c084fc;font-weight:600;">100</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05);background:rgba(255,255,255,0.02);">
+            <td style="padding:0.875rem 1.25rem;color:#d1d5db;">IA Agent autonome (Llama)</td>
+            <td style="padding:0.875rem;text-align:center;">✗</td>
+            <td style="padding:0.875rem;text-align:center;color:#22c55e;font-weight:700;">✓</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+            <td style="padding:0.875rem 1.25rem;color:#d1d5db;">Stop Orders (Stop Loss, Autobuy)</td>
+            <td style="padding:0.875rem;text-align:center;">✗</td>
+            <td style="padding:0.875rem;text-align:center;color:#22c55e;font-weight:700;">✓</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05);background:rgba(255,255,255,0.02);">
+            <td style="padding:0.875rem 1.25rem;color:#d1d5db;">Sell All (liquider en 1 clic)</td>
+            <td style="padding:0.875rem;text-align:center;">✗</td>
+            <td style="padding:0.875rem;text-align:center;color:#22c55e;font-weight:700;">✓</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+            <td style="padding:0.875rem 1.25rem;color:#d1d5db;">Badge VIP &amp; personnalisation</td>
+            <td style="padding:0.875rem;text-align:center;">✗</td>
+            <td style="padding:0.875rem;text-align:center;color:#22c55e;font-weight:700;">✓</td>
+          </tr>
+          <tr style="background:rgba(255,255,255,0.02);">
+            <td style="padding:0.875rem 1.25rem;color:#d1d5db;">Prix</td>
+            <td style="padding:0.875rem;text-align:center;color:#22c55e;font-weight:700;">Gratuit à vie</td>
+            <td style="padding:0.875rem;text-align:center;color:#c084fc;font-weight:600;">Bientôt</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- User counter -->
+    <div data-aos="fade-up" class="mt-8 text-center">
+      <p style="font-size:0.875rem;color:#6b7280;">Rejoignez <span id="pricing-counter" style="color:#a855f7;font-weight:700;">100+</span> traders qui apprennent déjà sur Stackia.</p>
+    </div>
+  </div>
+</section>
+
 <!-- HOW TO GET PREMIUM -->
 <section id="obtenir-premium" class="relative py-16 sm:py-20 bg-gradient-to-b from-black via-[#05001a] to-black">
   <div class="grid-overlay"></div>
@@ -226,9 +294,26 @@
   AOS.init({duration:800,easing:'ease-out-cubic',once:true,offset:60});
   lucide.createIcons();
   const btn=document.getElementById('mobile-menu-btn'),menu=document.getElementById('mobile-menu');
-  btn.addEventListener('click',()=>menu.classList.toggle('hidden'));
+  btn.addEventListener('click',()=>{const open=menu.classList.toggle('hidden');btn.setAttribute('aria-expanded',!open);});
   const nav=document.getElementById('main-nav');
   window.addEventListener('scroll',()=>{if(window.scrollY>50)nav.classList.add('bg-black/90','shadow-lg');else nav.classList.remove('bg-black/90','shadow-lg');});
+
+  // Animated counter for pricing page
+  const counterEl = document.getElementById('pricing-counter');
+  if (counterEl) {
+    const obs = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting) {
+        let n = 0, target = 100, dur = 1200, step = target / (dur / 16);
+        const timer = setInterval(() => {
+          n = Math.min(n + step, target);
+          counterEl.textContent = Math.floor(n) + '+';
+          if (n >= target) clearInterval(timer);
+        }, 16);
+        obs.disconnect();
+      }
+    }, {threshold: 0.5});
+    obs.observe(counterEl);
+  }
 </script>
 </body>
 </html>

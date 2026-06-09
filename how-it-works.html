@@ -85,7 +85,7 @@
         <a href="about.html" class="text-sm text-gray-400 hover:text-white transition-colors">À propos</a>
         <a href="https://app.stackia.trade/" target="_blank" rel="noopener" class="glow-btn inline-flex items-center gap-2 px-5 py-2.5 bg-neon-600 hover:bg-neon-500 text-white text-sm font-semibold rounded-full">Lancer la simulation <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
       </div>
-      <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-400" aria-label="Menu"><i data-lucide="menu" class="w-6 h-6"></i></button>
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-400" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu"><i data-lucide="menu" class="w-6 h-6"></i></button>
     </div>
     <div id="mobile-menu" class="md:hidden hidden pb-4 border-t border-white/5 mt-2 pt-4 space-y-3">
       <a href="features.html" class="block text-sm text-gray-400 py-2">Fonctionnalités</a>
@@ -94,6 +94,7 @@
       <a href="faq.html" class="block text-sm text-gray-400 py-2">FAQ</a>
       <a href="news.html" class="block text-sm text-gray-400 py-2">Actualités</a>
       <a href="about.html" class="block text-sm text-gray-400 py-2">À propos</a>
+      <a href="https://app.stackia.trade/" target="_blank" rel="noopener" class="glow-btn inline-flex items-center gap-2 px-5 py-2.5 bg-neon-600 hover:bg-neon-500 text-white text-sm font-semibold rounded-full mt-2">Lancer la simulation <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
     </div>
   </div>
 </nav>
@@ -116,7 +117,10 @@
         <div class="step-line"></div>
         <div class="absolute left-0 top-0 w-16 h-16 rounded-2xl bg-gradient-to-br from-neon-600 to-neon-800 flex items-center justify-center shadow-lg shadow-neon-600/30"><span class="text-2xl font-black text-white">1</span></div>
         <div class="glow-card rounded-2xl bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6">
-          <h3 class="text-xl font-bold text-white mb-2 flex items-center gap-2"><i data-lucide="user-plus" class="w-5 h-5 text-neon-400"></i>Crée ton compte gratuitement</h3>
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-xl font-bold text-white flex items-center gap-2"><i data-lucide="user-plus" class="w-5 h-5 text-neon-400"></i>Crée ton compte gratuitement</h3>
+            <span style="font-size:0.7rem;color:#6b7280;border:1px solid rgba(255,255,255,0.08);border-radius:999px;padding:2px 8px;flex-shrink:0;">~30 sec</span>
+          </div>
           <p class="text-gray-400 leading-relaxed">Inscris-toi en 30 secondes avec ton email et un mot de passe, ou d'un clic avec <strong class="text-white">Google OAuth</strong>. Aucune carte bancaire requise, aucune vérification d'identité.</p>
           <div class="mt-3 flex flex-wrap gap-2 text-xs">
             <span class="px-3 py-1 rounded-full bg-neon-900/30 border border-neon-800/30 text-neon-300">Email + mot de passe</span>
@@ -129,7 +133,10 @@
         <div class="step-line"></div>
         <div class="absolute left-0 top-0 w-16 h-16 rounded-2xl bg-gradient-to-br from-neon-600 to-neon-800 flex items-center justify-center shadow-lg shadow-neon-600/30"><span class="text-2xl font-black text-white">2</span></div>
         <div class="glow-card rounded-2xl bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6">
-          <h3 class="text-xl font-bold text-white mb-2 flex items-center gap-2"><i data-lucide="wallet" class="w-5 h-5 text-neon-400"></i>Reçois 200 000 $ virtuels</h3>
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-xl font-bold text-white flex items-center gap-2"><i data-lucide="wallet" class="w-5 h-5 text-neon-400"></i>Reçois 200 000 $ virtuels</h3>
+            <span style="font-size:0.7rem;color:#6b7280;border:1px solid rgba(255,255,255,0.08);border-radius:999px;padding:2px 8px;flex-shrink:0;">Instantané</span>
+          </div>
           <p class="text-gray-400 leading-relaxed">Ton compte est crédité automatiquement d'un capital virtuel. Ce sont de l'argent <strong class="text-white">100 % fictif</strong> — tu ne peux rien perdre, mais tu peux tout apprendre.</p>
         </div>
       </div>
@@ -138,7 +145,10 @@
         <div class="step-line"></div>
         <div class="absolute left-0 top-0 w-16 h-16 rounded-2xl bg-gradient-to-br from-neon-600 to-neon-800 flex items-center justify-center shadow-lg shadow-neon-600/30"><span class="text-2xl font-black text-white">3</span></div>
         <div class="glow-card rounded-2xl bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6">
-          <h3 class="text-xl font-bold text-white mb-2 flex items-center gap-2"><i data-lucide="search" class="w-5 h-5 text-neon-400"></i>Explore les marchés</h3>
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-xl font-bold text-white flex items-center gap-2"><i data-lucide="search" class="w-5 h-5 text-neon-400"></i>Explore les marchés</h3>
+            <span style="font-size:0.7rem;color:#6b7280;border:1px solid rgba(255,255,255,0.08);border-radius:999px;padding:2px 8px;flex-shrink:0;">5-10 min</span>
+          </div>
           <p class="text-gray-400 leading-relaxed">Parcours les <strong class="text-white">36 actifs</strong> disponibles : actions, cryptos, matières premières, indices. Les prix sont mis à jour à la minute via Yahoo Finance, avec des graphiques historiques interactifs.</p>
         </div>
       </div>
@@ -147,7 +157,10 @@
         <div class="step-line"></div>
         <div class="absolute left-0 top-0 w-16 h-16 rounded-2xl bg-gradient-to-br from-neon-600 to-neon-800 flex items-center justify-center shadow-lg shadow-neon-600/30"><span class="text-2xl font-black text-white">4</span></div>
         <div class="glow-card rounded-2xl bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6">
-          <h3 class="text-xl font-bold text-white mb-2 flex items-center gap-2"><i data-lucide="trending-up" class="w-5 h-5 text-neon-400"></i>Passe ton premier trade</h3>
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-xl font-bold text-white flex items-center gap-2"><i data-lucide="trending-up" class="w-5 h-5 text-neon-400"></i>Passe ton premier trade</h3>
+            <span style="font-size:0.7rem;color:#6b7280;border:1px solid rgba(255,255,255,0.08);border-radius:999px;padding:2px 8px;flex-shrink:0;">~1 min</span>
+          </div>
           <p class="text-gray-400 leading-relaxed">Choisis un actif, saisis une quantité, clique sur <strong class="text-white">Acheter</strong>. Transaction instantanée, apparition immédiate dans ton portefeuille. Consulte ton P/L en temps réel.</p>
         </div>
       </div>
@@ -155,7 +168,10 @@
       <div data-aos="fade-up" class="relative pl-20">
         <div class="absolute left-0 top-0 w-16 h-16 rounded-2xl bg-gradient-to-br from-neon-600 to-neon-800 flex items-center justify-center shadow-lg shadow-neon-600/30"><span class="text-2xl font-black text-white">5</span></div>
         <div class="glow-card rounded-2xl bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6">
-          <h3 class="text-xl font-bold text-white mb-2 flex items-center gap-2"><i data-lucide="trophy" class="w-5 h-5 text-neon-400"></i>Progresse & grimpe au classement</h3>
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-xl font-bold text-white flex items-center gap-2"><i data-lucide="trophy" class="w-5 h-5 text-neon-400"></i>Progresse & grimpe au classement</h3>
+            <span style="font-size:0.7rem;color:#6b7280;border:1px solid rgba(255,255,255,0.08);border-radius:999px;padding:2px 8px;flex-shrink:0;">En continu</span>
+          </div>
           <p class="text-gray-400 leading-relaxed">Analyse tes performances, affine ta stratégie, et compare-toi aux autres traders. Invite un ami avec ton <strong class="text-white">code de parrainage</strong> : 14 jours Premium offerts pour vous deux.</p>
         </div>
       </div>
@@ -192,6 +208,42 @@
       <a href="https://app.stackia.trade/" target="_blank" rel="noopener" class="glow-btn inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-neon-600 to-neon-500 hover:from-neon-500 hover:to-neon-400 text-white font-bold rounded-full">
         <i data-lucide="rocket" class="w-5 h-5"></i>Commencer maintenant<i data-lucide="arrow-right" class="w-5 h-5"></i>
       </a>
+    </div>
+  </div>
+</section>
+
+<!-- MINI FAQ -->
+<section class="relative py-12 bg-black">
+  <div class="grid-overlay"></div>
+  <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-8" data-aos="fade-up">
+      <h2 class="text-2xl font-extrabold text-white">Questions rapides</h2>
+    </div>
+    <div class="space-y-3" data-aos="fade-up">
+      <details style="border:1px solid rgba(124,58,237,0.15);border-radius:1rem;padding:1rem 1.25rem;transition:all 0.3s;" open>
+        <summary style="cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;color:#e2e8f0;font-weight:600;font-size:0.9375rem;">
+          Faut-il des connaissances en finance pour commencer ?
+          <i data-lucide="chevron-down" style="width:18px;height:18px;color:#a855f7;flex-shrink:0;transition:transform 0.3s;"></i>
+        </summary>
+        <p style="margin-top:0.75rem;color:#9ca3af;font-size:0.875rem;line-height:1.6;">Non, aucune connaissance n'est requise. L'interface est intuitive et l'IA pédagogique répond à toutes tes questions en français.</p>
+      </details>
+      <details style="border:1px solid rgba(124,58,237,0.15);border-radius:1rem;padding:1rem 1.25rem;transition:all 0.3s;">
+        <summary style="cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;color:#e2e8f0;font-weight:600;font-size:0.9375rem;">
+          Puis-je utiliser Stackia sur mobile ?
+          <i data-lucide="chevron-down" style="width:18px;height:18px;color:#a855f7;flex-shrink:0;transition:transform 0.3s;"></i>
+        </summary>
+        <p style="margin-top:0.75rem;color:#9ca3af;font-size:0.875rem;line-height:1.6;">Oui ! Stackia est une PWA installable sur iOS et Android depuis le navigateur, sans passer par l'App Store.</p>
+      </details>
+      <details style="border:1px solid rgba(124,58,237,0.15);border-radius:1rem;padding:1rem 1.25rem;transition:all 0.3s;">
+        <summary style="cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;color:#e2e8f0;font-weight:600;font-size:0.9375rem;">
+          Y a-t-il un risque de perdre de l'argent réel ?
+          <i data-lucide="chevron-down" style="width:18px;height:18px;color:#a855f7;flex-shrink:0;transition:transform 0.3s;"></i>
+        </summary>
+        <p style="margin-top:0.75rem;color:#9ca3af;font-size:0.875rem;line-height:1.6;">Jamais. Tout l'argent est virtuel. Stackia est un simulateur éducatif — aucune carte bancaire n'est requise.</p>
+      </details>
+    </div>
+    <div class="text-center mt-6" data-aos="fade-up">
+      <a href="faq.html" style="font-size:0.875rem;color:#a855f7;text-decoration:underline;">Voir toutes les questions →</a>
     </div>
   </div>
 </section>
