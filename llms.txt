@@ -1,0 +1,42 @@
+# Stackia
+
+> Stackia est une plateforme éducative fintech 100% gratuite qui permet d'apprendre à investir sans risque financier. Les utilisateurs reçoivent 200 000 $ virtuels pour trader sur 36 actifs réels en temps réel (actions, cryptos, matières premières, indices). L'application propose un agent IA, un système de classement mondial, une messagerie temps réel et une intégration Polymarket.
+
+## Pages principales
+
+- [Accueil](https://stackia.trade/): Présentation générale de la plateforme d'investissement virtuel Stackia — fonctionnalités clés, avantages et appel à l'action.
+- [Fonctionnalités](https://stackia.trade/features.html): Liste détaillée des capacités de la plateforme : actifs tradables, agent IA, ordres automatiques, leaderboard, messagerie, PWA.
+- [Comment ça marche](https://stackia.trade/how-it-works.html): Guide en 5 étapes pour démarrer sur Stackia — inscription, exploration du portefeuille, passage d'ordres, suivi du classement.
+- [Tarifs](https://stackia.trade/pricing.html): Comparaison des offres Basic (gratuite) et Premium — quotas IA, fonctionnalités exclusives, accès étudiant.
+- [À propos](https://stackia.trade/about.html): Mission de Stackia, stack technique (Python/Flask, PostgreSQL/Supabase, SocketIO, Groq, Gemini), valeurs et engagements.
+- [Actualités](https://stackia.trade/news.html): Dernières mises à jour et annonces de la plateforme.
+- [FAQ](https://stackia.trade/faq.html): Réponses aux questions fréquentes sur la sécurité des données, le fonctionnement du simulateur et les fonctionnalités premium.
+- [Stackia Telecom](https://stackia.trade/telecom.html): Produit secondaire — firmware de réseau maillé LoRa pour ESP8266/ESP32 permettant la communication hors-ligne décentralisée.
+- [Politique de confidentialité](https://stackia.trade/privacy-policy.html): Traitement des données personnelles, conformité RGPD, droits des utilisateurs.
+- [Conditions d'utilisation](https://stackia.trade/terms.html): Règles d'utilisation, responsabilités et cadre légal de la plateforme.
+
+## Application
+
+- [Application Stackia](https://app.stackia.trade/): Interface principale de simulation d'investissement (backend séparé, non inclus dans ce dépôt).
+
+## Informations techniques
+
+Stack backend de l'application (hébergée séparément) :
+- Runtime : Python 3.12 + Flask 3 + Gunicorn
+- Base de données : PostgreSQL via Supabase
+- Temps réel : Flask-SocketIO + WebSockets
+- Données de marché : Yahoo Finance (yfinance)
+- IA : Gemini 1.5 Flash (gratuit, 5 req/jour) · Groq Llama 3.3 70B (premium, 100 req/jour)
+- Auth : Google OAuth 2.0 + bcrypt
+- Sécurité : validation CSRF, rate limiting
+
+Stack frontend du site marketing (ce dépôt) :
+- HTML5, CSS3, JavaScript vanilla
+- Tailwind CSS (CDN)
+- AOS (Animate On Scroll)
+- Lucide Icons
+
+## Contact
+
+- Email : contact@stackia.trade
+- Langue : Français (fr_FR)
